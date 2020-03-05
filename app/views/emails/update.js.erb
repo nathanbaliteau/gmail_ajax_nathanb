@@ -1,0 +1,5 @@
+email_link = document.getElementById("<%= @email.id %>").childNodes[1];
+email_link.classList.toggle("font-weight-bold");
+email_to_show = document.getElementById("email-selected");
+email_to_show.innerHTML = '';
+email_to_show.insertAdjacentHTML("beforeend", "<%= j render 'show', email: @email %>");

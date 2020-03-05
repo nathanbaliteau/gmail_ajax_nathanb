@@ -1,0 +1,18 @@
+<div class="container">
+  <%= button_to "Receive an email", { action: "create" }, remote: true, class: "btn-secondary" %>
+  <br/>
+  <div class="row d-flex justify-content-between">
+	  <div id="email-list" class="col col-md-3 border border-secondary">
+	    <% @emails.each do |email| %>
+	    	<div id="<%= email.id %>" class="card mt-3">
+	    		<% if email.read %>
+	    			<%= link_to email.object, email, remote: true %>
+	    		<% else %>
+	    			<%= link_to email.object, email, remote: true, class: "font-weight-bold" %>
+	    		<% end %>
+	    	</div>
+	    <% end %>
+	  </div>
+	  <div id="email-selected" class="col col-md-8 border border-secondary"></div>
+  </div>
+</div>

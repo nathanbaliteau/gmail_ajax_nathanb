@@ -1,0 +1,12 @@
+<div class="container">
+	<h1 class="mt-4"><%= email.object %></h1>
+	<p class="mt-5"><%= email.body %></p>
+  	<div class="row mt-5">
+  		<%= button_to "Delete", email, method: :delete, remote: true, class: "btn btn-danger ml-3 mr-2" %>
+  		<% if email.read %>
+  			<%= button_to "Mark as non-read", email, method: :put, remote: true %>
+  		<% else %>
+  			<%= button_to "Mark as read", email, method: :put, remote: true %>
+  		<% end %>
+  	</div>
+</div>
